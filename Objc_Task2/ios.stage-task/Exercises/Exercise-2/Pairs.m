@@ -3,7 +3,17 @@
 @implementation Pairs
 
 - (NSInteger)countPairs:(NSArray <NSNumber *> *)array number:(NSNumber *)number {
-    return 0;
+    
+    
+    int result = 0;
+    for( int index = 0; index < [array count]-1; index++) {
+        int obj = [array[index]intValue] + [number intValue];
+        if( [array containsObject:[NSNumber numberWithInt:obj]]) {
+            result++;
+        }
+    }
+    
+    return (NSInteger)result;
 }
 
 @end
